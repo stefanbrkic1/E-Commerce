@@ -1,7 +1,7 @@
 import './App.css';
 
 function App() {
-  return <div>E-Commerce App</div>;
+  return <div>ECOMMERCE</div>;
 }
 
 export default App;
