@@ -15,11 +15,14 @@
 
 :root {
   --primary-color: #ff0000;
+
   --text-color: #f3f4f8;
   --text-secondary-color: #d2d4da;
   --text-dark-color: #191919;
+
   --background-color: #1a1a1a;
   --background-secondary-color: #252525;
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
