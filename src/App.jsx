@@ -19,7 +19,7 @@ function App() {
   if (error) return <div>A network error was encountered</div>;
   if (loading) return <div>Loading...</div>;
 
-  return <img src={productsData[0].images[0]} alt="" />;
+  return <h1>Our First Test</h1>;
 }
 
 export default App;
