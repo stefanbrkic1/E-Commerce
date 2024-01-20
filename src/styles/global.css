@@ -93,6 +93,16 @@ body {
     flex: 1;
     width: 100%;
   }
+  .popular-items-container {
+    padding: 20px;
+  }
+  .arrow-left,
+  .arrow-right {
+    display: none;
+  }
+  .card-btn {
+    opacity: 1;
+  }
 }
 
 /* Tablets */
@@ -121,5 +131,11 @@ body {
   }
   .hero-cell4 {
     grid-area: 2 / 2 / 3 / 3;
+  }
+  .popular-items-container {
+    padding: 20px;
+  }
+  .card-btn {
+    opacity: 1;
   }
 }
