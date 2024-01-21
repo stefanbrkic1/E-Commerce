@@ -1,6 +1,7 @@
 import Navbar from '../components/Navbar/Navbar';
 import HeroSection from '../components/HeroSection/HeroSection';
 import PopularItems from '../components/PopularItems/PopularItems';
+import AboutSection from '../components/AboutSection/AboutSection';
 import PropTypes from 'prop-types';
 
 function HomePage({ productsData, loading, error }) {
@@ -13,6 +14,7 @@ function HomePage({ productsData, loading, error }) {
         loading={loading}
         error={error}
       />
+      <AboutSection />
     </>
   );
 }
