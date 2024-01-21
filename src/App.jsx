@@ -12,12 +12,15 @@ function App() {
     fetchProducts()
       .then((data) => {
         setProductsData(data);
+        console.log(data);
       })
       .catch((error) => setError(error))
       .finally(() => setLoading(false));
   }, []);
 
-  return <HomePage />;
+  return (
+    <HomePage productsData={productsData} loading={loading} error={error} />
+  );
 }
 
 export default App;
