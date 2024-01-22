@@ -3,6 +3,7 @@ import HeroSection from '../components/HeroSection/HeroSection';
 import PopularItems from '../components/PopularItems/PopularItems';
 import AboutSection from '../components/AboutSection/AboutSection';
 import QuotesSection from '../components/QuotesSection/QuotesSection';
+import InfiniteCaroussel from '../components/InfiniteCaroussel/InfiniteCaroussel';
 import PropTypes from 'prop-types';
 
 function HomePage({ productsData, loading, error }) {
@@ -17,6 +18,7 @@ function HomePage({ productsData, loading, error }) {
       />
       <AboutSection />
       <QuotesSection />
+      <InfiniteCaroussel />
     </>
   );
 }
