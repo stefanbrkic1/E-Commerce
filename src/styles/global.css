@@ -133,6 +133,13 @@ body {
   .quotes {
     flex-direction: column;
   }
+  .bottom-section-container {
+    flex-direction: column;
+    padding: 0px 20px 30px 20px;
+  }
+  .shipping {
+    padding: 25px;
+  }
 }
 
 /* Tablets */
@@ -191,5 +198,12 @@ body {
   }
   .quotes-container {
     padding: 20px 20px;
+  }
+  .bottom-section-container {
+    flex-direction: column;
+    padding: 0px 20px 30px 20px;
+  }
+  .shipping {
+    padding: 30px;
   }
 }
