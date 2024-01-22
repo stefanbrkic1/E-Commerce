@@ -4,9 +4,8 @@ function AboutSection() {
   return (
     <section className="about-section-container">
       <div className="about-section">
-        <div className="about-section-left">
-          <div className="about-logo"></div>
-        </div>
+        <div className="about-logo"></div>
+        <div className="about-section-left"></div>
         <div className="about-section-right">
           <h3 className="about-header">ABOUT US</h3>
           <p className="about-para">

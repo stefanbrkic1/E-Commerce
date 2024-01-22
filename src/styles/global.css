@@ -157,6 +157,9 @@ body {
   .footer-right-right {
     gap: 25px;
   }
+  .about-logo {
+    display: none;
+  }
 }
 
 /* Tablets */
@@ -225,5 +228,8 @@ body {
   }
   .footer-container {
     padding: 50px 20px;
+  }
+  .about-logo {
+    display: none;
   }
 }
