@@ -1,0 +1,102 @@
+.quotes-container {
+  width: 100%;
+  height: auto;
+  padding: 20px 80px;
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.quotes-section {
+  width: 100%;
+  height: 650px;
+}
+
+.quotes-header {
+  font-size: 24rem;
+}
+
+.quotes {
+  width: 100%;
+  height: 100%;
+  padding: 25px 0px 0px 0px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.quote-card {
+  height: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.quote-img-container {
+  width: 100%;
+  height: 100%;
+  background-color: grey;
+  position: relative;
+  overflow: hidden;
+}
+
+.quote-img {
+  width: 100%;
+  height: 100%;
+  transition: transform 140ms ease-in;
+}
+
+.quote-img:hover {
+  transform: scale(1.2);
+}
+
+.person1 {
+  background-image: url(../../assets/img/persons/attractive-brunette-female-dressed-long-neck-brown-jacket-grey-background.jpg);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.person2 {
+  background-image: url(../../assets/img/persons/medium-shot-unknown-man-posing-studio.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.person3 {
+  background-image: url(../../assets/img/persons/sucessful-bearded-businessman-white-shirt-is-posing-dark-photo-studio.jpg);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.quote-text-container {
+  width: 90%;
+  height: 50%;
+  padding: 20px;
+  background-color: black;
+  position: relative;
+}
+
+.quote-text-container::after {
+  content: '';
+  background-image: url(../../assets/img/icons/quote-right-solid.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: -35px;
+  right: 5%;
+  width: 70px;
+  height: 70px;
+}
+
+.person-name {
+  font-size: 22rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+}

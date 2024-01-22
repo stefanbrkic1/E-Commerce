@@ -105,6 +105,7 @@ body {
   }
   .about-section-container {
     padding: 25px 0px;
+    height: auto;
   }
   .about-section {
     height: auto;
@@ -122,6 +123,15 @@ body {
   .about-header {
     font-size: 20rem;
     margin-bottom: 20px;
+  }
+  .quotes-container {
+    padding: 20px 20px;
+  }
+  .quotes-section {
+    height: 2000px;
+  }
+  .quotes {
+    flex-direction: column;
   }
 }
 
@@ -160,6 +170,7 @@ body {
   }
   .about-section-container {
     padding: 35px 20px;
+    height: auto;
   }
   .about-section {
     height: auto;
@@ -177,5 +188,8 @@ body {
   .about-header {
     font-size: 20rem;
     margin-bottom: 20px;
+  }
+  .quotes-container {
+    padding: 20px 20px;
   }
 }

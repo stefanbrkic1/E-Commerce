@@ -76,6 +76,6 @@
   font-size: 20rem;
   font-weight: bold;
   text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
-  background-color: var(--background-color);
+  background-color: black;
   padding: 5px 15px;
 }

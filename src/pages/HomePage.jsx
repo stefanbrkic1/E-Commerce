@@ -2,6 +2,7 @@ import Navbar from '../components/Navbar/Navbar';
 import HeroSection from '../components/HeroSection/HeroSection';
 import PopularItems from '../components/PopularItems/PopularItems';
 import AboutSection from '../components/AboutSection/AboutSection';
+import QuotesSection from '../components/QuotesSection/QuotesSection';
 import PropTypes from 'prop-types';
 
 function HomePage({ productsData, loading, error }) {
@@ -15,6 +16,7 @@ function HomePage({ productsData, loading, error }) {
         error={error}
       />
       <AboutSection />
+      <QuotesSection />
     </>
   );
 }
