@@ -1,11 +1,12 @@
 .bottom-section-container {
   width: 100%;
   height: auto;
-  padding: 0px 80px 60px 80px;
+  padding: 0px 80px 65px 80px;
   display: flex;
   justify-content: center;
   align-items: stretch;
   gap: 25px;
+  border-bottom: 2px solid var(--background-secondary-color);
 }
 
 .shipping {
