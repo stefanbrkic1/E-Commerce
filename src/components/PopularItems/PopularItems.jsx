@@ -49,9 +49,9 @@ function PopularItems({ productsData, loading, error }) {
             <ProductCard
               loading={loading}
               error={error}
-              image={productsData[6].images[0]}
-              description={productsData[6].title}
-              price={productsData[6].price}
+              image={productsData[0].images[0]}
+              description={productsData[0].title}
+              price={productsData[0].price}
             />
 
             <ProductCard
@@ -65,6 +65,22 @@ function PopularItems({ productsData, loading, error }) {
             <ProductCard
               loading={loading}
               error={error}
+              image={productsData[2].images[0]}
+              description={productsData[2].title}
+              price={productsData[2].price}
+            />
+
+            <ProductCard
+              loading={loading}
+              error={error}
+              image={productsData[3].images[0]}
+              description={productsData[3].title}
+              price={productsData[3].price}
+            />
+
+            <ProductCard
+              loading={loading}
+              error={error}
               image={productsData[4].images[0]}
               description={productsData[4].title}
               price={productsData[4].price}
@@ -73,57 +89,49 @@ function PopularItems({ productsData, loading, error }) {
             <ProductCard
               loading={loading}
               error={error}
-              image={productsData[14].images[0]}
-              description={productsData[14].title}
-              price={productsData[14].price}
+              image={productsData[5].images[0]}
+              description={productsData[5].title}
+              price={productsData[5].price}
             />
 
             <ProductCard
               loading={loading}
               error={error}
-              image={productsData[15].images[0]}
-              description={productsData[15].title}
-              price={productsData[15].price}
+              image={productsData[6].images[0]}
+              description={productsData[6].title}
+              price={productsData[6].price}
             />
 
             <ProductCard
               loading={loading}
               error={error}
-              image={productsData[11].images[0]}
-              description={productsData[11].title}
-              price={productsData[11].price}
+              image={productsData[7].images[0]}
+              description={productsData[7].title}
+              price={productsData[7].price}
             />
 
             <ProductCard
               loading={loading}
               error={error}
-              image={productsData[34].images[0]}
-              description={productsData[34].title}
-              price={productsData[34].price}
+              image={productsData[8].images[0]}
+              description={productsData[8].title}
+              price={productsData[8].price}
             />
 
             <ProductCard
               loading={loading}
               error={error}
-              image={productsData[36].images[0]}
-              description={productsData[36].title}
-              price={productsData[36].price}
+              image={productsData[9].images[0]}
+              description={productsData[9].title}
+              price={productsData[9].price}
             />
 
             <ProductCard
               loading={loading}
               error={error}
-              image={productsData[25].images[0]}
-              description={productsData[25].title}
-              price={productsData[25].price}
-            />
-
-            <ProductCard
-              loading={loading}
-              error={error}
-              image={productsData[35].images[0]}
-              description={productsData[35].title}
-              price={productsData[35].price}
+              image={productsData[10].images[0]}
+              description={productsData[10].title}
+              price={productsData[10].price}
             />
           </>
         )}
