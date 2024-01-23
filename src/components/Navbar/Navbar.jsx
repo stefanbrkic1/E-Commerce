@@ -1,6 +1,7 @@
+import PropTypes from 'prop-types';
 import './navbar.css';
 
-function Navbar() {
+function Navbar({ setActivePage }) {
   return (
     <nav className="navbar">
       <div className="navbar-left">
@@ -8,11 +9,16 @@ function Navbar() {
       </div>
 
       <div className="navbar-middle">
-        <div className="logo"></div>
+        <div className="logo" onClick={() => setActivePage('home-page')}></div>
       </div>
 
       <div className="navbar-right">
-        <div className="products-link">SHOP NOW</div>
+        <div
+          className="products-link"
+          onClick={() => setActivePage('products-page')}
+        >
+          SHOP NOW
+        </div>
 
         <button type="button" className="user-btn">
           <div className="user-icon"></div>
@@ -25,5 +31,9 @@ function Navbar() {
     </nav>
   );
 }
+
+Navbar.propTypes = {
+  setActivePage: PropTypes.func.isRequired,
+};
 
 export default Navbar;

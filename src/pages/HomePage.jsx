@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import Navbar from '../components/Navbar/Navbar';
 import HeroSection from '../components/HeroSection/HeroSection';
 import PopularItems from '../components/PopularItems/PopularItems';
 import AboutSection from '../components/AboutSection/AboutSection';
@@ -11,7 +10,6 @@ import Footer from '../components/Footer/Footer';
 function HomePage({ productsData, loading, error }) {
   return (
     <>
-      <Navbar />
       <HeroSection />
       <PopularItems
         productsData={productsData}
