@@ -60,3 +60,27 @@
   right: 25px;
   background-image: url(../../assets/img/icons/arrow-right.svg);
 }
+
+/* Phones */
+@media only screen and (max-width: 767px) {
+  .popular-items-container {
+    padding: 20px;
+  }
+  .arrow-left,
+  .arrow-right {
+    display: none;
+  }
+  .card-btn {
+    opacity: 1;
+  }
+}
+
+/* Tablets */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .popular-items-container {
+    padding: 20px;
+  }
+  .card-btn {
+    opacity: 1;
+  }
+}
