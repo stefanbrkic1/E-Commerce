@@ -27,7 +27,11 @@ function App() {
       {activePage === 'home-page' ? (
         <HomePage productsData={productsData} loading={loading} error={error} />
       ) : (
-        <ProductsPage />
+        <ProductsPage
+          productsData={productsData}
+          loading={loading}
+          error={error}
+        />
       )}
     </>
   );

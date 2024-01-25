@@ -66,6 +66,7 @@
   transition: border 100ms ease-in-out;
   padding: 5px;
   color: var(--text-color);
+  font-size: 18rem;
 }
 
 .products-link:hover {
@@ -141,6 +142,9 @@
   .products-link {
     margin-right: 0px;
   }
+  .products-link {
+    font-size: 16rem;
+  }
 }
 
 /* Tablets */
@@ -150,5 +154,8 @@
   }
   .search-bar {
     width: 85%;
+  }
+  .products-link {
+    font-size: 16rem;
   }
 }

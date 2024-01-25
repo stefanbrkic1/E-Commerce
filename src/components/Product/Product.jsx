@@ -1,10 +1,10 @@
-import './product-card.css';
+import './product.css';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 const ProductImage = styled.div`
   width: 100%;
-  height: 350px;
+  height: 100%;
   overflow: hidden;
   background-image: url(${(props) => props.image});
   background-position: center;
@@ -16,7 +16,7 @@ const ProductImage = styled.div`
   }
 `;
 
-function ProductCard({ loading, error, image, description, price }) {
+function Product({ loading, error, image, description, price }) {
   let content;
   if (loading) {
     content = <div>Loading...</div>;
@@ -26,8 +26,8 @@ function ProductCard({ loading, error, image, description, price }) {
     content = <ProductImage image={image}></ProductImage>;
   }
   return (
-    <div className="product-card">
-      <div className="product-image">
+    <div className="product">
+      <div className="product-image-container">
         {content}
         <button type="button" className="card-btn">
           Details
@@ -40,7 +40,7 @@ function ProductCard({ loading, error, image, description, price }) {
   );
 }
 
-ProductCard.propTypes = {
+Product.propTypes = {
   loading: PropTypes.bool,
   error: PropTypes.string,
   image: PropTypes.string,
@@ -48,4 +48,4 @@ ProductCard.propTypes = {
   price: PropTypes.number,
 };
 
-export default ProductCard;
+export default Product;
