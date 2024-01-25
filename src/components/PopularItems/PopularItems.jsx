@@ -3,7 +3,7 @@ import './popular-items.css';
 import ProductCard from '../ProductCard/ProductCard';
 import PropTypes from 'prop-types';
 
-function PopularItems({ productsData, loading, error }) {
+function PopularItems({ productsData, loading, error, goToProductsPage }) {
   const containerRef = useRef(null);
 
   const scrollLeft = () => {
@@ -25,7 +25,11 @@ function PopularItems({ productsData, loading, error }) {
   return (
     <section className="popular-items-container">
       <h2 className="popular-heading">POPULAR ITEMS</h2>
-      <button type="button" className="view-all-link">
+      <button
+        type="button"
+        className="view-all-link"
+        onClick={goToProductsPage}
+      >
         View All
       </button>
       <button
@@ -145,6 +149,7 @@ PopularItems.propTypes = {
   productsData: PropTypes.any,
   loading: PropTypes.bool,
   error: PropTypes.string,
+  goToProductsPage: PropTypes.func,
 };
 
 export default PopularItems;

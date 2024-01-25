@@ -37,6 +37,7 @@ function HomePage({
         productsData={productsData}
         loading={loading}
         error={error}
+        goToProductsPage={goToProductsPage}
       />
       <AboutSection />
       <QuotesSection />
