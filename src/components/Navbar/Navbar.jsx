@@ -1,7 +1,8 @@
-import PropTypes from 'prop-types';
 import './navbar.css';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
-function Navbar({ setActivePage }) {
+function Navbar({ goToProductsPage }) {
   return (
     <nav className="navbar">
       <div className="navbar-left">
@@ -9,14 +10,11 @@ function Navbar({ setActivePage }) {
       </div>
 
       <div className="navbar-middle">
-        <div className="logo" onClick={() => setActivePage('home-page')}></div>
+        <Link to="/" className="logo"></Link>
       </div>
 
       <div className="navbar-right">
-        <div
-          className="products-link"
-          onClick={() => setActivePage('products-page')}
-        >
+        <div className="products-link" onClick={goToProductsPage}>
           SHOP NOW
         </div>
 
@@ -33,7 +31,7 @@ function Navbar({ setActivePage }) {
 }
 
 Navbar.propTypes = {
-  setActivePage: PropTypes.func.isRequired,
+  goToProductsPage: PropTypes.func,
 };
 
 export default Navbar;

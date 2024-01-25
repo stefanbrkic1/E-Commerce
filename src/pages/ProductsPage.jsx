@@ -1,16 +1,17 @@
 import '../styles/products-page.css';
+import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
 import Product from '../components/Product/Product';
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
-function ProductsPage({
-  productsData,
-  loading,
-  error,
-  category = 'all-products',
-}) {
-  const [productsCategory, setProductsCategory] = useState(category);
+function ProductsPage() {
+  const { state } = useLocation();
+  const { productsData, loading, error, category } = state || {};
+  const [productsCategory, setProductsCategory] = useState(
+    category || 'all-products',
+  );
   const [filteredProducts, setFilteredProducts] = useState(productsData);
 
   useEffect(() => {
@@ -52,6 +53,7 @@ function ProductsPage({
 
   return (
     <>
+      <Navbar />
       <section className="products-container">
         <div className="products-top">
           <h2 className="products-header">PRODUCTS</h2>

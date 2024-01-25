@@ -1,15 +1,14 @@
 import fetchProducts from './utils/productsApi';
 import { useState, useEffect } from 'react';
 import HomePage from './pages/HomePage';
-import ProductsPage from './pages/ProductsPage';
-import Navbar from './components/Navbar/Navbar';
 import './styles/global.css';
+import { useNavigate } from 'react-router-dom';
 
 function App() {
   const [productsData, setProductsData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [activePage, setActivePage] = useState('home-page');
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchProducts()
@@ -21,19 +20,45 @@ function App() {
       .finally(() => setLoading(false));
   }, []);
 
+  const goToProductsPage = () => {
+    navigate('/products', { state: { productsData, loading, error } });
+  };
+
+  const goToElectronicsPage = () => {
+    navigate('/products', {
+      state: { productsData, loading, error, category: 'electronics' },
+    });
+  };
+
+  const goToClothesPage = () => {
+    navigate('/products', {
+      state: { productsData, loading, error, category: 'clothes' },
+    });
+  };
+
+  const goToFurniturePage = () => {
+    navigate('/products', {
+      state: { productsData, loading, error, category: 'furniture' },
+    });
+  };
+
+  const goToShoesPage = () => {
+    navigate('/products', {
+      state: { productsData, loading, error, category: 'shoes' },
+    });
+  };
+
   return (
-    <>
-      <Navbar setActivePage={setActivePage} />
-      {activePage === 'home-page' ? (
-        <HomePage productsData={productsData} loading={loading} error={error} />
-      ) : (
-        <ProductsPage
-          productsData={productsData}
-          loading={loading}
-          error={error}
-        />
-      )}
-    </>
+    <HomePage
+      productsData={productsData}
+      loading={loading}
+      error={error}
+      goToProductsPage={goToProductsPage}
+      goToElectronicsPage={goToElectronicsPage}
+      goToClothesPage={goToClothesPage}
+      goToFurniturePage={goToFurniturePage}
+      goToShoesPage={goToShoesPage}
+    />
   );
 }
 
