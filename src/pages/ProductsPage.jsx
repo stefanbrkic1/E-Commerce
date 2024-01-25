@@ -15,6 +15,11 @@ function ProductsPage() {
   const [filteredProducts, setFilteredProducts] = useState(productsData);
 
   useEffect(() => {
+    // Scroll to the top when the component mounts
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     if (productsCategory === 'all-products') {
       setFilteredProducts(productsData);
     } else {
