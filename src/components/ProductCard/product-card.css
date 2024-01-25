@@ -44,3 +44,9 @@
   align-items: center;
   background-color: var(--background-secondary-color);
 }
+
+.product-price-popular {
+  font-size: 22rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}

@@ -34,8 +34,8 @@ function ProductCard({ loading, error, image, description, price }) {
         </button>
       </div>
 
+      <div className="product-price-popular">{price}$</div>
       <div className="product-short-description">{description}</div>
-      <div className="product-price">{price}$</div>
     </div>
   );
 }

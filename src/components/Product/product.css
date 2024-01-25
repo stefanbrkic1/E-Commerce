@@ -1,5 +1,5 @@
 .product {
-  height: 440px;
+  height: 515px;
   min-width: 0;
 }
 
@@ -20,10 +20,32 @@
   background-color: var(--background-secondary-color);
 }
 
+.price-text {
+  font-size: 14rem;
+  opacity: 40%;
+}
+
+.product-price {
+  font-size: 22rem;
+}
+
+.lorem {
+  font-size: 14rem;
+  opacity: 40%;
+  margin-top: 6px;
+}
+
+.product-bottom {
+  display: flex;
+  height: 100px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 /* Phones */
 @media only screen and (max-width: 767px) {
   .product {
-    height: 330px;
+    height: 400px;
   }
   .product-image-container {
     height: 230px;
@@ -36,7 +58,7 @@
 /* Tablets */
 @media (min-width: 768px) and (max-width: 1024px) {
   .product {
-    height: 450px;
+    height: 500px;
   }
   .product-image-container {
     height: 350px;
