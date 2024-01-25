@@ -91,14 +91,6 @@ function ProductsPage({
             })}
         </div>
       </section>
-
-      <section className="promo-container">
-        <img
-          src="src/assets/img/backgrounds/black-friday.jpg"
-          alt="promo-image"
-          className="promo"
-        />
-      </section>
       <Footer />
     </>
   );
