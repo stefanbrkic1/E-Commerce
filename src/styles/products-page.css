@@ -24,8 +24,8 @@
 .products {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: auto;
   gap: 40px;
+  padding: 0px 50px;
 }
 
 .categories {
@@ -47,6 +47,7 @@
   .products {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+    padding: 0px;
   }
   .categories {
     font-size: 16rem;
@@ -59,12 +60,13 @@
 }
 
 /* Tablets */
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1300px) {
   .products-container {
     padding: 35px 20px;
   }
   .products {
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+    padding: 0px;
   }
 }

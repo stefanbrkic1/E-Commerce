@@ -8,7 +8,19 @@ export default async function fetchProducts() {
       throw new Error('ServiceError');
     }
     const data = await response.json();
-    return data;
+
+    const filteredData = data.filter((product) => {
+      if (
+        product.description !== 'Test Product Description' &&
+        product.description !== 'A description' &&
+        product.description !== 'dsgasdgarfhgahgsdh' &&
+        product.title !== 'SQDQSD' &&
+        product.title !== 'tshirt'
+      ) {
+        return product;
+      }
+    });
+    return filteredData;
   } catch (error) {
     console.error(error);
   }
