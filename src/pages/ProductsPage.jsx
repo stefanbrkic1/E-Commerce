@@ -58,7 +58,6 @@ function ProductsPage() {
         <div className="products-top">
           <h2 className="products-header">PRODUCTS</h2>
           <div className="products-filter-container">
-            <h3>Category</h3>
             <select
               name="categoryDropdown"
               id="categoryDropdown"

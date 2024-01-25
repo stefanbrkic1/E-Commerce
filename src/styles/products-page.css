@@ -1,6 +1,6 @@
 .products-container {
   margin-top: 84px;
-  padding: 40px 80px;
+  padding: 40px 80px 90px 80px;
   position: relative;
 }
 
@@ -11,7 +11,7 @@
   width: 100%;
   margin-bottom: 45px;
   background-color: black;
-  padding: 20px;
+  padding: 18px 20px;
 }
 
 .products-filter-container {
@@ -29,29 +29,32 @@
 }
 
 .categories {
-  background-color: var(--text-color);
+  background-color: var(--background-color);
+  color: var(--text-color);
   border: none;
   outline: none;
-  padding: 5px 10px;
+  padding: 8px;
   cursor: pointer;
   font-family: 'InterRegular', sans-serif;
-  font-size: 14rem;
+  font-size: 18rem;
 }
 
 /* Phones */
 @media only screen and (max-width: 767px) {
   .products-container {
-    padding: 30px 20px;
+    padding: 20px 20px 30px 20px;
   }
   .products {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
   .categories {
-    font-size: 14rem;
+    font-size: 16rem;
+    padding: 8px 5px;
   }
   .products-top {
-    margin-bottom: 35px;
+    margin-bottom: 25px;
+    padding: 12px;
   }
 }
 
