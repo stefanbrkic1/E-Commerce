@@ -45,7 +45,7 @@
 /* Phones */
 @media only screen and (max-width: 767px) {
   .product {
-    height: 400px;
+    height: 345px;
   }
   .product-image-container {
     height: 230px;
@@ -58,7 +58,7 @@
 /* Tablets */
 @media (min-width: 768px) and (max-width: 1024px) {
   .product {
-    height: 500px;
+    height: 460px;
   }
   .product-image-container {
     height: 350px;

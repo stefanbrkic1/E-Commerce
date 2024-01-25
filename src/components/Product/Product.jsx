@@ -34,16 +34,8 @@ function Product({ loading, error, image, description, price }) {
         </button>
       </div>
 
-      <div className="product-bottom">
-        <div className="product-short-description">{description}</div>
-        <div>
-          <div className="lorem">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur,
-            eum ad!
-          </div>
-          <div className="product-price">{price}$</div>
-        </div>
-      </div>
+      <div className="product-price-popular">{price}$</div>
+      <div className="product-short-description">{description}</div>
     </div>
   );
 }

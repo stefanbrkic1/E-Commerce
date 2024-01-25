@@ -60,13 +60,19 @@
 }
 
 /* Tablets */
-@media (min-width: 768px) and (max-width: 1300px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   .products-container {
     padding: 35px 20px;
   }
   .products {
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+    padding: 0px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .products {
     padding: 0px;
   }
 }

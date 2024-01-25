@@ -26,7 +26,9 @@
   display: flex;
   overflow-x: auto;
   scroll-behavior: smooth;
-  padding: 30px 0px;
+  padding: 40px 0px 0px 0px;
+  height: 460px;
+  overflow-y: hidden;
 }
 
 .popular-cards-container::-webkit-scrollbar {
@@ -73,6 +75,9 @@
   .card-btn {
     opacity: 1;
   }
+  .popular-cards-container {
+    height: 490px;
+  }
 }
 
 /* Tablets */
@@ -82,5 +87,8 @@
   }
   .card-btn {
     opacity: 1;
+  }
+  .popular-cards-container {
+    height: 495px;
   }
 }
