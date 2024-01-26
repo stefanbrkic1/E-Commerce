@@ -3,9 +3,10 @@ import { useEffect, useState } from 'react';
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
 import RelatedItems from '../../components/RelatedItems/RelatedItems';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 function ProductPage() {
+  const navigate = useNavigate();
   const { state } = useLocation();
   const { productsData, loading, error, productId } = state || {};
   const [product, setProduct] = useState(null);
@@ -21,9 +22,15 @@ function ProductPage() {
     window.scrollTo(0, 0);
   }, []);
 
+  function goToProductsPage() {
+    navigate('/products', {
+      state: { productsData, loading, error },
+    });
+  }
+
   return (
     <>
-      <Navbar />
+      <Navbar goToProductsPage={goToProductsPage} />
       <div className="product-page-container">
         <div className="product-container">
           <div className="product-images">
@@ -88,6 +95,7 @@ function ProductPage() {
           loading={loading}
           error={error}
           category={product.category.name}
+          goToProductsPage={goToProductsPage}
         />
       )}
       <Footer />

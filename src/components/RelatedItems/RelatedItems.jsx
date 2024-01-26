@@ -5,7 +5,13 @@ import ProductCard from '../ProductCard/ProductCard';
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 
-function RelatedItems({ productsData, loading, error, category }) {
+function RelatedItems({
+  productsData,
+  loading,
+  error,
+  category,
+  goToProductsPage,
+}) {
   const navigate = useNavigate();
   const containerRef = useRef(null);
   const [relatedItems, setRelatedItems] = useState(null);
@@ -54,7 +60,11 @@ function RelatedItems({ productsData, loading, error, category }) {
   return (
     <section className="related-items-container">
       <h2 className="popular-heading">RELATED ITEMS</h2>
-      <button type="button" className="view-all-link">
+      <button
+        type="button"
+        className="view-all-link"
+        onClick={goToProductsPage}
+      >
         View All
       </button>
       <button
@@ -84,6 +94,7 @@ RelatedItems.propTypes = {
   loading: PropTypes.bool,
   error: PropTypes.string,
   category: PropTypes.string,
+  goToProductsPage: PropTypes.func,
 };
 
 export default RelatedItems;
