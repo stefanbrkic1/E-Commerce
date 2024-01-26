@@ -53,6 +53,7 @@ HomePage.propTypes = {
   loading: PropTypes.bool,
   error: PropTypes.string,
   goToProductsPage: PropTypes.func,
+  goToProductPage: PropTypes.func,
   goToElectronicsPage: PropTypes.func,
   goToClothesPage: PropTypes.func,
   goToFurniturePage: PropTypes.func,

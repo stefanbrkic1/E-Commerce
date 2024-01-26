@@ -2,8 +2,10 @@ import { useRef } from 'react';
 import './popular-items.css';
 import ProductCard from '../ProductCard/ProductCard';
 import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 
 function PopularItems({ productsData, loading, error, goToProductsPage }) {
+  const navigate = useNavigate();
   const containerRef = useRef(null);
 
   const scrollLeft = () => {
@@ -21,6 +23,12 @@ function PopularItems({ productsData, loading, error, goToProductsPage }) {
       });
     }
   };
+
+  function goToProductPage(productId) {
+    navigate('/product', {
+      state: { productsData: productsData, productId: productId },
+    });
+  }
 
   return (
     <section className="popular-items-container">
@@ -56,6 +64,7 @@ function PopularItems({ productsData, loading, error, goToProductsPage }) {
               image={productsData[0].images[0]}
               description={productsData[0].title}
               price={productsData[0].price}
+              goToProductPage={() => goToProductPage(productsData[0].id)}
             />
 
             <ProductCard
@@ -64,6 +73,7 @@ function PopularItems({ productsData, loading, error, goToProductsPage }) {
               image={productsData[1].images[0]}
               description={productsData[1].title}
               price={productsData[1].price}
+              goToProductPage={() => goToProductPage(productsData[1].id)}
             />
 
             <ProductCard
@@ -72,6 +82,7 @@ function PopularItems({ productsData, loading, error, goToProductsPage }) {
               image={productsData[2].images[0]}
               description={productsData[2].title}
               price={productsData[2].price}
+              goToProductPage={() => goToProductPage(productsData[2].id)}
             />
 
             <ProductCard
@@ -80,6 +91,7 @@ function PopularItems({ productsData, loading, error, goToProductsPage }) {
               image={productsData[3].images[0]}
               description={productsData[3].title}
               price={productsData[3].price}
+              goToProductPage={() => goToProductPage(productsData[3].id)}
             />
 
             <ProductCard
@@ -88,6 +100,7 @@ function PopularItems({ productsData, loading, error, goToProductsPage }) {
               image={productsData[4].images[0]}
               description={productsData[4].title}
               price={productsData[4].price}
+              goToProductPage={() => goToProductPage(productsData[4].id)}
             />
 
             <ProductCard
@@ -96,6 +109,7 @@ function PopularItems({ productsData, loading, error, goToProductsPage }) {
               image={productsData[5].images[0]}
               description={productsData[5].title}
               price={productsData[5].price}
+              goToProductPage={() => goToProductPage(productsData[5].id)}
             />
 
             <ProductCard
@@ -104,6 +118,7 @@ function PopularItems({ productsData, loading, error, goToProductsPage }) {
               image={productsData[6].images[0]}
               description={productsData[6].title}
               price={productsData[6].price}
+              goToProductPage={() => goToProductPage(productsData[6].id)}
             />
 
             <ProductCard
@@ -112,6 +127,7 @@ function PopularItems({ productsData, loading, error, goToProductsPage }) {
               image={productsData[7].images[0]}
               description={productsData[7].title}
               price={productsData[7].price}
+              goToProductPage={() => goToProductPage(productsData[7].id)}
             />
 
             <ProductCard
@@ -120,6 +136,7 @@ function PopularItems({ productsData, loading, error, goToProductsPage }) {
               image={productsData[8].images[0]}
               description={productsData[8].title}
               price={productsData[8].price}
+              goToProductPage={() => goToProductPage(productsData[8].id)}
             />
 
             <ProductCard
@@ -128,6 +145,7 @@ function PopularItems({ productsData, loading, error, goToProductsPage }) {
               image={productsData[9].images[0]}
               description={productsData[9].title}
               price={productsData[9].price}
+              goToProductPage={() => goToProductPage(productsData[9].id)}
             />
 
             <ProductCard
@@ -136,6 +154,7 @@ function PopularItems({ productsData, loading, error, goToProductsPage }) {
               image={productsData[10].images[0]}
               description={productsData[10].title}
               price={productsData[10].price}
+              goToProductPage={() => goToProductPage(productsData[10].id)}
             />
           </>
         )}

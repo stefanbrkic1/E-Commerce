@@ -21,7 +21,9 @@ function App() {
   }, []);
 
   const goToProductsPage = () => {
-    navigate('/products', { state: { productsData, loading, error } });
+    navigate('/products', {
+      state: { productsData, loading, error },
+    });
   };
 
   const goToElectronicsPage = () => {

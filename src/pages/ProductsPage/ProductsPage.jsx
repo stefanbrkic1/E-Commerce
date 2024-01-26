@@ -1,12 +1,13 @@
-import '../styles/products-page.css';
-import Navbar from '../components/Navbar/Navbar';
-import Footer from '../components/Footer/Footer';
-import Product from '../components/Product/Product';
+import './products-page.css';
+import Navbar from '../../components/Navbar/Navbar';
+import Footer from '../../components/Footer/Footer';
+import Product from '../../components/Product/Product';
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 function ProductsPage() {
+  const navigate = useNavigate();
   const { state } = useLocation();
   const { productsData, loading, error, category } = state || {};
   const [productsCategory, setProductsCategory] = useState(
@@ -56,6 +57,12 @@ function ProductsPage() {
     setProductsCategory(selectedCategory);
   }
 
+  function goToProductPage(productId) {
+    navigate('/product', {
+      state: { productsData: productsData, productId: productId },
+    });
+  }
+
   return (
     <>
       <Navbar />
@@ -92,6 +99,7 @@ function ProductsPage() {
                   image={product.images[0]}
                   description={product.title}
                   price={product.price}
+                  goToProductPage={() => goToProductPage(product.id)}
                 />
               );
             })}

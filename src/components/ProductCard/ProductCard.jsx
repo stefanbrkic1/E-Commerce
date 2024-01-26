@@ -16,7 +16,14 @@ const ProductImage = styled.div`
   }
 `;
 
-function ProductCard({ loading, error, image, description, price }) {
+function ProductCard({
+  loading,
+  error,
+  image,
+  description,
+  price,
+  goToProductPage,
+}) {
   let content;
   if (loading) {
     content = <div>Loading...</div>;
@@ -27,7 +34,7 @@ function ProductCard({ loading, error, image, description, price }) {
   }
   return (
     <div className="product-card">
-      <div className="product-image">
+      <div className="product-image" onClick={goToProductPage}>
         {content}
         <button type="button" className="card-btn">
           Details
@@ -46,6 +53,7 @@ ProductCard.propTypes = {
   image: PropTypes.string,
   description: PropTypes.string,
   price: PropTypes.number,
+  goToProductPage: PropTypes.func,
 };
 
 export default ProductCard;
