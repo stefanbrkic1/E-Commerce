@@ -29,6 +29,12 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.product-secondary-image:hover {
+  border: 1px solid white;
 }
 
 .product-container-img {

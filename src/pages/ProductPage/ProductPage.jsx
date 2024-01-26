@@ -11,6 +11,7 @@ function ProductPage() {
   const { state } = useLocation();
   const { productsData, loading, error, productId } = state || {};
   const [product, setProduct] = useState(null);
+  const [imageIndex, setImageIndex] = useState(0);
 
   useEffect(() => {
     const displayingProduct = productsData.filter((product) => {
@@ -41,19 +42,24 @@ function ProductPage() {
                   <div
                     className="product-secondary-image"
                     style={{ backgroundImage: `url(${product.images[0]})` }}
+                    onClick={() => setImageIndex(0)}
                   ></div>
                   <div
                     className="product-secondary-image"
                     style={{ backgroundImage: `url(${product.images[1]})` }}
+                    onClick={() => setImageIndex(1)}
                   ></div>
                   <div
                     className="product-secondary-image"
                     style={{ backgroundImage: `url(${product.images[2]})` }}
+                    onClick={() => setImageIndex(2)}
                   ></div>
                 </div>
                 <div
                   className="product-container-img"
-                  style={{ backgroundImage: `url(${product.images[0]})` }}
+                  style={{
+                    backgroundImage: `url(${product.images[imageIndex]})`,
+                  }}
                 ></div>
               </>
             )}
