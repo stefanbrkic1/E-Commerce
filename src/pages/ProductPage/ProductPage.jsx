@@ -83,7 +83,7 @@ function ProductPage() {
             {product && (
               <div className="product-info-price">{product.price}$</div>
             )}
-
+            <div className="product-info-quantity-heading">Quantity</div>
             <div className="product-cart-adder">
               <NumberInput />
               <button type="button" className="add-to-cart-btn">
