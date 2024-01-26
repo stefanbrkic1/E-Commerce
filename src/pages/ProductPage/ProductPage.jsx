@@ -1,9 +1,10 @@
 import './product-page.css';
 import { useEffect, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
 import RelatedItems from '../../components/RelatedItems/RelatedItems';
-import { useLocation, useNavigate } from 'react-router-dom';
+import NumberInput from '../../components/NumberInput/NumberInput';
 
 function ProductPage() {
   const navigate = useNavigate();
@@ -83,9 +84,12 @@ function ProductPage() {
               <div className="product-info-price">{product.price}$</div>
             )}
 
-            <button type="button" className="add-to-cart-btn">
-              Add to Cart
-            </button>
+            <div className="product-cart-adder">
+              <NumberInput />
+              <button type="button" className="add-to-cart-btn">
+                Add to Cart
+              </button>
+            </div>
           </div>
         </div>
       </div>

@@ -1,0 +1,48 @@
+.number-input-container {
+  height: 43px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.number-input {
+  width: 43px;
+  height: 43px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-dark-color);
+  font-weight: bold;
+  font-size: 20rem;
+}
+
+.number-increment,
+.number-decrement {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  padding: 0px 10px;
+  cursor: pointer;
+}
+
+.increment-sign,
+.decrement-sign {
+  width: 20px;
+  height: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.increment-sign {
+  background-image: url(../../assets/img/icons/arrow-left.svg);
+  transform: rotate(90deg);
+}
+
+.decrement-sign {
+  background-image: url(../../assets/img/icons/arrow-right.svg);
+  transform: rotate(90deg);
+}
