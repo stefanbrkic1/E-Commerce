@@ -26,7 +26,7 @@ function PopularItems({ productsData, loading, error, goToProductsPage }) {
 
   function goToProductPage(productId) {
     navigate('/product', {
-      state: { productsData: productsData, productId: productId },
+      state: { productsData, loading, error, productId: productId },
     });
   }
 

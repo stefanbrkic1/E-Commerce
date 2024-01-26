@@ -1,12 +1,13 @@
+import './product-page.css';
 import { useEffect, useState } from 'react';
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
+import RelatedItems from '../../components/RelatedItems/RelatedItems';
 import { useLocation } from 'react-router-dom';
-import './product-page.css';
 
 function ProductPage() {
   const { state } = useLocation();
-  const { productsData, productId } = state || {};
+  const { productsData, loading, error, productId } = state || {};
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
@@ -81,6 +82,14 @@ function ProductPage() {
           </div>
         </div>
       </div>
+      {product && (
+        <RelatedItems
+          productsData={productsData}
+          loading={loading}
+          error={error}
+          category={product.category.name}
+        />
+      )}
       <Footer />
     </>
   );
