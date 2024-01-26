@@ -21,6 +21,7 @@ function RelatedItems({
       navigate('/product', {
         state: { productsData: productsData, productId: productId },
       });
+      window.scrollTo(0, 0);
     }
 
     const productsByCategory = productsData
