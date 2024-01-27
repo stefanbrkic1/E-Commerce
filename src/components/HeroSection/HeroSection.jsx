@@ -1,12 +1,33 @@
 import './hero-section.css';
-import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 
-function HeroSection({
-  goToElectronicsPage,
-  goToClothesPage,
-  goToFurniturePage,
-  goToShoesPage,
-}) {
+function HeroSection() {
+  const navigate = useNavigate();
+
+  const goToElectronicsPage = () => {
+    navigate('/products', {
+      state: { category: 'electronics' },
+    });
+  };
+
+  const goToClothesPage = () => {
+    navigate('/products', {
+      state: { category: 'clothes' },
+    });
+  };
+
+  const goToFurniturePage = () => {
+    navigate('/products', {
+      state: { category: 'furniture' },
+    });
+  };
+
+  const goToShoesPage = () => {
+    navigate('/products', {
+      state: { category: 'shoes' },
+    });
+  };
+
   return (
     <section className="hero-section-container">
       <div className="hero-section">
@@ -33,12 +54,5 @@ function HeroSection({
     </section>
   );
 }
-
-HeroSection.propTypes = {
-  goToElectronicsPage: PropTypes.func,
-  goToClothesPage: PropTypes.func,
-  goToFurniturePage: PropTypes.func,
-  goToShoesPage: PropTypes.func,
-};
 
 export default HeroSection;

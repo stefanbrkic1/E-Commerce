@@ -1,14 +1,15 @@
+import './styles/global.css';
 import fetchProducts from './utils/productsApi';
 import { useState, useEffect } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
-import './styles/global.css';
-import { useNavigate } from 'react-router-dom';
+import ProductsPage from './pages/ProductsPage/ProductsPage';
+import ProductPage from './pages/ProductPage/ProductPage';
 
 function App() {
   const [productsData, setProductsData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const navigate = useNavigate();
 
   useEffect(() => {
     fetchProducts()
@@ -20,47 +21,41 @@ function App() {
       .finally(() => setLoading(false));
   }, []);
 
-  const goToProductsPage = () => {
-    navigate('/products', {
-      state: { productsData, loading, error },
-    });
-  };
-
-  const goToElectronicsPage = () => {
-    navigate('/products', {
-      state: { productsData, loading, error, category: 'electronics' },
-    });
-  };
-
-  const goToClothesPage = () => {
-    navigate('/products', {
-      state: { productsData, loading, error, category: 'clothes' },
-    });
-  };
-
-  const goToFurniturePage = () => {
-    navigate('/products', {
-      state: { productsData, loading, error, category: 'furniture' },
-    });
-  };
-
-  const goToShoesPage = () => {
-    navigate('/products', {
-      state: { productsData, loading, error, category: 'shoes' },
-    });
-  };
-
   return (
-    <HomePage
-      productsData={productsData}
-      loading={loading}
-      error={error}
-      goToProductsPage={goToProductsPage}
-      goToElectronicsPage={goToElectronicsPage}
-      goToClothesPage={goToClothesPage}
-      goToFurniturePage={goToFurniturePage}
-      goToShoesPage={goToShoesPage}
-    />
+    <BrowserRouter>
+      <Routes>
+        <Route
+          index
+          element={
+            <HomePage
+              productsData={productsData}
+              loading={loading}
+              error={error}
+            />
+          }
+        />
+        <Route
+          path="/products"
+          element={
+            <ProductsPage
+              productsData={productsData}
+              loading={loading}
+              error={error}
+            />
+          }
+        />
+        <Route
+          path="/product"
+          element={
+            <ProductPage
+              productsData={productsData}
+              loading={loading}
+              error={error}
+            />
+          }
+        />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

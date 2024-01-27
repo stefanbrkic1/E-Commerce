@@ -1,15 +1,16 @@
 import './product-page.css';
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
 import RelatedItems from '../../components/RelatedItems/RelatedItems';
 import NumberInput from '../../components/NumberInput/NumberInput';
 
-function ProductPage() {
+function ProductPage({ productsData, loading, error }) {
   const navigate = useNavigate();
   const { state } = useLocation();
-  const { productsData, loading, error, productId } = state || {};
+  const { productId } = state || {};
   const [product, setProduct] = useState(null);
   const [imageIndex, setImageIndex] = useState(0);
 
@@ -112,5 +113,11 @@ function ProductPage() {
     </>
   );
 }
+
+ProductPage.propTypes = {
+  productsData: PropTypes.any,
+  loading: PropTypes.bool,
+  error: PropTypes.string,
+};
 
 export default ProductPage;

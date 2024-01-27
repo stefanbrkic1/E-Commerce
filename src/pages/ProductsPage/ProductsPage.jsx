@@ -6,10 +6,10 @@ import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-function ProductsPage() {
+function ProductsPage({ productsData, loading, error }) {
   const navigate = useNavigate();
   const { state } = useLocation();
-  const { productsData, loading, error, category } = state || {};
+  const { category } = state || {};
   const [productsCategory, setProductsCategory] = useState(
     category || 'all-products',
   );
