@@ -1,9 +1,7 @@
-import { useState } from 'react';
 import './number-input.css';
+import PropTypes from 'prop-types';
 
-function NumberInput() {
-  const [quantity, setQuantity] = useState(1);
-
+function NumberInput({ quantity, setQuantity }) {
   function increment() {
     setQuantity((prevQuantity) => prevQuantity + 1);
   }
@@ -26,5 +24,10 @@ function NumberInput() {
     </div>
   );
 }
+
+NumberInput.propTypes = {
+  quantity: PropTypes.number,
+  setQuantity: PropTypes.func,
+};
 
 export default NumberInput;

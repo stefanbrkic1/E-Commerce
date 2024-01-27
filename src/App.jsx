@@ -10,6 +10,7 @@ function App() {
   const [productsData, setProductsData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
     fetchProducts()
@@ -31,6 +32,8 @@ function App() {
               productsData={productsData}
               loading={loading}
               error={error}
+              cartItems={cartItems}
+              setCartItems={setCartItems}
             />
           }
         />
@@ -41,6 +44,8 @@ function App() {
               productsData={productsData}
               loading={loading}
               error={error}
+              cartItems={cartItems}
+              setCartItems={setCartItems}
             />
           }
         />
@@ -51,6 +56,8 @@ function App() {
               productsData={productsData}
               loading={loading}
               error={error}
+              cartItems={cartItems}
+              setCartItems={setCartItems}
             />
           }
         />

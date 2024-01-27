@@ -1,8 +1,9 @@
 import './navbar.css';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import Cart from '../Cart/Cart';
 
-function Navbar({ goToProductsPage }) {
+function Navbar({ goToProductsPage, cartItems, setCartItems }) {
   return (
     <nav className="navbar">
       <div className="navbar-left">
@@ -22,9 +23,7 @@ function Navbar({ goToProductsPage }) {
           <div className="user-icon"></div>
         </button>
 
-        <button type="button" className="cart-btn">
-          <div className="cart-icon"></div>
-        </button>
+        <Cart cartItems={cartItems} setCartItems={setCartItems} />
       </div>
     </nav>
   );
@@ -32,6 +31,8 @@ function Navbar({ goToProductsPage }) {
 
 Navbar.propTypes = {
   goToProductsPage: PropTypes.func,
+  cartItems: PropTypes.array,
+  setCartItems: PropTypes.func,
 };
 
 export default Navbar;

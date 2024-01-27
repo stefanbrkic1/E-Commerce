@@ -6,7 +6,13 @@ import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-function ProductsPage({ productsData, loading, error }) {
+function ProductsPage({
+  productsData,
+  loading,
+  error,
+  cartItems,
+  setCartItems,
+}) {
   const navigate = useNavigate();
   const { state } = useLocation();
   const { category } = state || {};
@@ -14,11 +20,6 @@ function ProductsPage({ productsData, loading, error }) {
     category || 'all-products',
   );
   const [filteredProducts, setFilteredProducts] = useState(productsData);
-
-  useEffect(() => {
-    // Scroll to the top when the component mounts
-    window.scrollTo(0, 0);
-  }, []);
 
   useEffect(() => {
     if (productsCategory === 'all-products') {
@@ -63,9 +64,14 @@ function ProductsPage({ productsData, loading, error }) {
     });
   }
 
+  useEffect(() => {
+    // Scroll to the top when the component mounts
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
-      <Navbar />
+      <Navbar cartItems={cartItems} setCartItems={setCartItems} />
       <section className="products-container">
         <div className="products-top">
           <h2 className="products-header">PRODUCTS</h2>
@@ -115,6 +121,8 @@ ProductsPage.propTypes = {
   loading: PropTypes.bool,
   error: PropTypes.string,
   category: PropTypes.string,
+  cartItems: PropTypes.array,
+  setCartItems: PropTypes.func,
 };
 
 export default ProductsPage;

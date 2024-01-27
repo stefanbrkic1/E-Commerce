@@ -50,7 +50,7 @@
   border: none;
   background-color: transparent;
   cursor: pointer;
-  z-index: 900;
+  z-index: 800;
 }
 
 .arrow-left {

@@ -10,21 +10,25 @@ import InfiniteCaroussel from '../components/InfiniteCaroussel/InfiniteCaroussel
 import BottomSection from '../components/BottomSection/BottomSection';
 import Footer from '../components/Footer/Footer';
 
-function HomePage({ productsData, loading, error }) {
+function HomePage({ productsData, loading, error, cartItems, setCartItems }) {
   const navigate = useNavigate();
+
+  const goToProductsPage = () => {
+    navigate('/products');
+  };
 
   useEffect(() => {
     // Scroll to the top when the component mounts
     window.scrollTo(0, 0);
   }, []);
 
-  const goToProductsPage = () => {
-    navigate('/products');
-  };
-
   return (
     <>
-      <Navbar goToProductsPage={goToProductsPage} />
+      <Navbar
+        goToProductsPage={goToProductsPage}
+        cartItems={cartItems}
+        setCartItems={setCartItems}
+      />
       <HeroSection
         productsData={productsData}
         loading={loading}
@@ -49,6 +53,8 @@ HomePage.propTypes = {
   productsData: PropTypes.any,
   loading: PropTypes.bool,
   error: PropTypes.string,
+  cartItems: PropTypes.array,
+  setCartItems: PropTypes.func,
 };
 
 export default HomePage;

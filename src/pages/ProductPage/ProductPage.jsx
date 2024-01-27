@@ -7,12 +7,19 @@ import Footer from '../../components/Footer/Footer';
 import RelatedItems from '../../components/RelatedItems/RelatedItems';
 import NumberInput from '../../components/NumberInput/NumberInput';
 
-function ProductPage({ productsData, loading, error }) {
+function ProductPage({
+  productsData,
+  loading,
+  error,
+  cartItems,
+  setCartItems,
+}) {
   const navigate = useNavigate();
   const { state } = useLocation();
   const { productId } = state || {};
   const [product, setProduct] = useState(null);
   const [imageIndex, setImageIndex] = useState(0);
+  const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
     const displayingProduct = productsData.filter((product) => {
@@ -31,9 +38,32 @@ function ProductPage({ productsData, loading, error }) {
     });
   }
 
+  function addToCart() {
+    const productIsInCart = cartItems.find(
+      (productInCart) => productInCart.id === product.id,
+    );
+
+    if (productIsInCart) {
+      const modifiedQuantity = cartItems.map((productInCart) => {
+        if (productInCart.id === product.id) {
+          return { ...product, quantity: (productInCart.quantity += quantity) };
+        } else {
+          return productInCart;
+        }
+      });
+      setCartItems(modifiedQuantity);
+    } else {
+      setCartItems([...cartItems, { ...product, quantity }]);
+    }
+  }
+
   return (
     <>
-      <Navbar goToProductsPage={goToProductsPage} />
+      <Navbar
+        goToProductsPage={goToProductsPage}
+        cartItems={cartItems}
+        setCartItems={setCartItems}
+      />
       <div className="product-page-container">
         <div className="product-container">
           <div className="product-images">
@@ -92,8 +122,12 @@ function ProductPage({ productsData, loading, error }) {
             )}
             <div className="product-info-quantity-heading">Quantity</div>
             <div className="product-cart-adder">
-              <NumberInput />
-              <button type="button" className="add-to-cart-btn">
+              <NumberInput quantity={quantity} setQuantity={setQuantity} />
+              <button
+                type="button"
+                className="add-to-cart-btn"
+                onClick={addToCart}
+              >
                 Add to Cart
               </button>
             </div>
@@ -118,6 +152,8 @@ ProductPage.propTypes = {
   productsData: PropTypes.any,
   loading: PropTypes.bool,
   error: PropTypes.string,
+  cartItems: PropTypes.array,
+  setCartItems: PropTypes.func,
 };
 
 export default ProductPage;

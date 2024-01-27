@@ -1,0 +1,217 @@
+.cart-btn {
+  width: 28px;
+  height: 28px;
+  appearance: none;
+  background: transparent;
+  border: none;
+  outline: none;
+  position: relative;
+  cursor: pointer;
+  transition: transfrom 100ms ease;
+  position: relative;
+  background-image: url(../../assets/img/icons/cart-shopping-solid.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.cart-btn:hover {
+  transform: scale(1.1);
+}
+
+.cart-items-length {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15px;
+  height: 15px;
+  padding: 8px;
+  position: absolute;
+  color: var(--text-color);
+  background-color: var(--primary-color);
+  top: -5px;
+  right: -8px;
+  border-radius: 50%;
+  font-weight: bold;
+  line-height: 0;
+}
+
+.cart-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--background-secondary-color);
+  padding: 20px;
+}
+
+.cart-heading {
+  font-size: 20rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.cart-icon {
+  width: 25px;
+  height: 25px;
+  background-image: url(/src/assets/img/icons/cart-shopping-solid.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.cart-text {
+  line-height: 0;
+}
+
+.cart-exit {
+  width: 25px;
+  height: 25px;
+  background-image: url(/src/assets/img/icons/xmark-solid.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+  transition: transform 200ms ease-in;
+}
+
+.cart-exit:hover {
+  transform: rotate(90deg);
+}
+
+.cart-items {
+  padding: 0px 20px;
+  overflow-y: scroll;
+  height: 100%;
+}
+
+.cart-items::-webkit-scrollbar {
+  display: none;
+}
+
+.cart-items::-webkit-scrollbar-thumb {
+  background-color: transparent; /* Make scrollbar thumb invisible */
+}
+
+/* Optional: You can style the track (the area where the thumb moves) */
+.cart-items::-webkit-scrollbar-track {
+  background-color: transparent; /* Make scrollbar track invisible */
+}
+
+.cart-items-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 90vh;
+}
+
+.cart-checkout-container {
+  padding: 15px 20px 10px 20px;
+  border-top: 1px solid var(--background-secondary-color);
+}
+
+.checkout-total {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 20rem;
+}
+
+.cart-product {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 0px;
+}
+
+.cart-product:not(:last-child) {
+  border-bottom: 1px solid var(--background-secondary-color);
+}
+
+.cart-product-img {
+  width: 60px;
+  height: 60px;
+  background-color: red;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.cart-product-price {
+  font-weight: bold;
+  font-size: 18rem;
+  margin-top: 3px;
+}
+
+.cart-product-left {
+  display: flex;
+  gap: 10px;
+}
+
+.cart-delete-btn {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-image: url(../../assets/img/icons/xmark-solid.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.cart-items-empty {
+  padding: 40px 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.overlay {
+  background-color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100svh;
+  opacity: 0.3;
+}
+
+.cart-product-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-weight: bold;
+}
+
+.checkout-btn {
+  width: 100%;
+  padding: 10px;
+  appearance: none;
+  border: none;
+  outline: none;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  font-weight: bold;
+  font-size: 17rem;
+  margin-top: 12px;
+  cursor: pointer;
+}
+
+/* Phones */
+@media only screen and (max-width: 767px) {
+  .cart-checkout-container {
+    padding: 15px 20px 15px 20px;
+  }
+}
+
+/* Tablets */
+@media (min-width: 768px) and (max-width: 1024px) {
+}
