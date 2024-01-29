@@ -3,17 +3,13 @@ import { ShopContext } from '../../App';
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
 import Product from '../../components/Product/Product';
-import PropTypes from 'prop-types';
 import { useEffect, useState, useContext } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 function ProductsPage() {
   const navigate = useNavigate();
-  const { productsData, loading, error, cartItems, setCartItems } =
-    useContext(ShopContext);
-
-  const { state } = useLocation();
-  const { category } = state || {};
+  const { productsData, loading, error } = useContext(ShopContext);
+  const { category } = useParams();
   const [productsCategory, setProductsCategory] = useState(
     category || 'all-products',
   );
@@ -57,9 +53,7 @@ function ProductsPage() {
   }
 
   function goToProductPage(productId) {
-    navigate('/product', {
-      state: { productsData: productsData, productId: productId },
-    });
+    navigate(`/product/${productId}`);
   }
 
   useEffect(() => {
@@ -69,7 +63,7 @@ function ProductsPage() {
 
   return (
     <>
-      <Navbar cartItems={cartItems} setCartItems={setCartItems} />
+      <Navbar />
       <section className="products-container">
         <div className="products-top">
           <h2 className="products-header">PRODUCTS</h2>
@@ -113,14 +107,5 @@ function ProductsPage() {
     </>
   );
 }
-
-ProductsPage.propTypes = {
-  productsData: PropTypes.any,
-  loading: PropTypes.bool,
-  error: PropTypes.string,
-  category: PropTypes.string,
-  cartItems: PropTypes.array,
-  setCartItems: PropTypes.func,
-};
 
 export default ProductsPage;

@@ -5,27 +5,19 @@ function HeroSection() {
   const navigate = useNavigate();
 
   const goToElectronicsPage = () => {
-    navigate('/products', {
-      state: { category: 'electronics' },
-    });
+    navigate('/products/electronics');
   };
 
   const goToClothesPage = () => {
-    navigate('/products', {
-      state: { category: 'clothes' },
-    });
+    navigate('/products/clothes');
   };
 
   const goToFurniturePage = () => {
-    navigate('/products', {
-      state: { category: 'furniture' },
-    });
+    navigate('/products/furniture');
   };
 
   const goToShoesPage = () => {
-    navigate('/products', {
-      state: { category: 'shoes' },
-    });
+    navigate('/products/shoes');
   };
 
   return (

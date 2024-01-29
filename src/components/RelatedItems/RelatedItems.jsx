@@ -18,9 +18,7 @@ function RelatedItems({
 
   useEffect(() => {
     function goToProductPage(productId) {
-      navigate('/product', {
-        state: { productsData: productsData, productId: productId },
-      });
+      navigate(`/product/${productId}`);
       window.scrollTo(0, 0);
     }
 

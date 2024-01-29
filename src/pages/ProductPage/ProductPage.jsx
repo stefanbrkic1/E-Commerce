@@ -1,8 +1,7 @@
 import './product-page.css';
 import { ShopContext } from '../../App';
 import { useEffect, useState, useContext } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import { useNavigate, useParams } from 'react-router-dom';
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
 import RelatedItems from '../../components/RelatedItems/RelatedItems';
@@ -12,16 +11,14 @@ function ProductPage() {
   const navigate = useNavigate();
   const { productsData, loading, error, cartItems, setCartItems } =
     useContext(ShopContext);
-
-  const { state } = useLocation();
-  const { productId } = state || {};
+  const { productId } = useParams();
   const [product, setProduct] = useState(null);
   const [imageIndex, setImageIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
     const displayingProduct = productsData.filter((product) => {
-      return product.id === productId;
+      return product.id === Number(productId);
     });
     setProduct(displayingProduct[0]);
   }, [productsData, productId]);
@@ -31,9 +28,7 @@ function ProductPage() {
   }, []);
 
   function goToProductsPage() {
-    navigate('/products', {
-      state: { productsData, loading, error },
-    });
+    navigate('/products/all-products');
   }
 
   function addToCart() {
@@ -57,11 +52,7 @@ function ProductPage() {
 
   return (
     <>
-      <Navbar
-        goToProductsPage={goToProductsPage}
-        cartItems={cartItems}
-        setCartItems={setCartItems}
-      />
+      <Navbar goToProductsPage={goToProductsPage} />
       <div className="product-page-container">
         <div className="product-container">
           <div className="product-images">
@@ -145,13 +136,5 @@ function ProductPage() {
     </>
   );
 }
-
-ProductPage.propTypes = {
-  productsData: PropTypes.any,
-  loading: PropTypes.bool,
-  error: PropTypes.string,
-  cartItems: PropTypes.array,
-  setCartItems: PropTypes.func,
-};
 
 export default ProductPage;

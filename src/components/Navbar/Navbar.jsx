@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Cart from '../Cart/Cart';
 
-function Navbar({ goToProductsPage, cartItems, setCartItems }) {
+function Navbar({ goToProductsPage }) {
   return (
     <nav className="navbar">
       <div className="navbar-left">
@@ -23,7 +23,7 @@ function Navbar({ goToProductsPage, cartItems, setCartItems }) {
           <div className="user-icon"></div>
         </button>
 
-        <Cart cartItems={cartItems} setCartItems={setCartItems} />
+        <Cart />
       </div>
     </nav>
   );
@@ -31,8 +31,6 @@ function Navbar({ goToProductsPage, cartItems, setCartItems }) {
 
 Navbar.propTypes = {
   goToProductsPage: PropTypes.func,
-  cartItems: PropTypes.array,
-  setCartItems: PropTypes.func,
 };
 
 export default Navbar;

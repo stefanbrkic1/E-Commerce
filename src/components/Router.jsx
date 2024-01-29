@@ -8,8 +8,8 @@ function Router() {
     <BrowserRouter>
       <Routes>
         <Route index element={<HomePage />} />
-        <Route path="/products" element={<ProductsPage />} />
-        <Route path="/product" element={<ProductPage />} />
+        <Route path="/products/:category" element={<ProductsPage />} />
+        <Route path="/product/:productId" element={<ProductPage />} />
       </Routes>
     </BrowserRouter>
   );

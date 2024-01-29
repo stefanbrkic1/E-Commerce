@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import './cart.css';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { ShopContext } from '../../App';
 
 const CartSidebar = styled.div`
   position: absolute;
@@ -21,7 +22,8 @@ const CartSidebar = styled.div`
   }
 `;
 
-function Cart({ cartItems, setCartItems }) {
+function Cart() {
+  const { cartItems, setCartItems } = useContext(ShopContext);
   const [isCartActive, setIsCartActive] = useState(false);
 
   function openCart() {

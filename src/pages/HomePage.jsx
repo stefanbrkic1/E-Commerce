@@ -1,7 +1,5 @@
-import { useEffect, useContext } from 'react';
-import { ShopContext } from '../App';
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import Navbar from '../components/Navbar/Navbar';
 import HeroSection from '../components/HeroSection/HeroSection';
 import PopularItems from '../components/PopularItems/PopularItems';
@@ -13,11 +11,9 @@ import Footer from '../components/Footer/Footer';
 
 function HomePage() {
   const navigate = useNavigate();
-  const { productsData, loading, error, cartItems, setCartItems } =
-    useContext(ShopContext);
 
   const goToProductsPage = () => {
-    navigate('/products');
+    navigate('/products/all-products');
   };
 
   useEffect(() => {
@@ -27,22 +23,9 @@ function HomePage() {
 
   return (
     <>
-      <Navbar
-        goToProductsPage={goToProductsPage}
-        cartItems={cartItems}
-        setCartItems={setCartItems}
-      />
-      <HeroSection
-        productsData={productsData}
-        loading={loading}
-        error={error}
-      />
-      <PopularItems
-        productsData={productsData}
-        loading={loading}
-        error={error}
-        goToProductsPage={goToProductsPage}
-      />
+      <Navbar goToProductsPage={goToProductsPage} />
+      <HeroSection />
+      <PopularItems goToProductsPage={goToProductsPage} />
       <AboutSection />
       <QuotesSection />
       <InfiniteCaroussel />
@@ -51,13 +34,5 @@ function HomePage() {
     </>
   );
 }
-
-HomePage.propTypes = {
-  productsData: PropTypes.any,
-  loading: PropTypes.bool,
-  error: PropTypes.string,
-  cartItems: PropTypes.array,
-  setCartItems: PropTypes.func,
-};
 
 export default HomePage;

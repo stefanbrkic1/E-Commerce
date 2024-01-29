@@ -1,12 +1,14 @@
-import { useRef } from 'react';
+import { useContext, useRef } from 'react';
 import './popular-items.css';
 import ProductCard from '../ProductCard/ProductCard';
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
+import { ShopContext } from '../../App';
 
-function PopularItems({ productsData, loading, error, goToProductsPage }) {
+function PopularItems({ goToProductsPage }) {
   const navigate = useNavigate();
   const containerRef = useRef(null);
+  const { productsData, loading, error } = useContext(ShopContext);
 
   const scrollLeft = () => {
     if (containerRef.current) {
@@ -25,9 +27,7 @@ function PopularItems({ productsData, loading, error, goToProductsPage }) {
   };
 
   function goToProductPage(productId) {
-    navigate('/product', {
-      state: { productsData, loading, error, productId: productId },
-    });
+    navigate(`/product/${productId}`);
   }
 
   return (
@@ -165,9 +165,6 @@ function PopularItems({ productsData, loading, error, goToProductsPage }) {
 }
 
 PopularItems.propTypes = {
-  productsData: PropTypes.any,
-  loading: PropTypes.bool,
-  error: PropTypes.string,
   goToProductsPage: PropTypes.func,
 };
 

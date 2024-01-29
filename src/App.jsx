@@ -23,7 +23,6 @@ function App() {
     fetchProducts()
       .then((data) => {
         setProductsData(data);
-        console.log(data);
       })
       .catch((error) => setError(error))
       .finally(() => setLoading(false));
