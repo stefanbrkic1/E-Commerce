@@ -17,10 +17,10 @@ function ProductPage() {
   const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
-    const displayingProduct = productsData.filter((product) => {
+    const displayingProduct = productsData.find((product) => {
       return product.id === Number(productId);
     });
-    setProduct(displayingProduct[0]);
+    setProduct(displayingProduct);
   }, [productsData, productId]);
 
   useEffect(() => {
