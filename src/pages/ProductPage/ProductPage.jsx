@@ -1,5 +1,6 @@
 import './product-page.css';
-import { useEffect, useState } from 'react';
+import { ShopContext } from '../../App';
+import { useEffect, useState, useContext } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Navbar from '../../components/Navbar/Navbar';
@@ -7,14 +8,11 @@ import Footer from '../../components/Footer/Footer';
 import RelatedItems from '../../components/RelatedItems/RelatedItems';
 import NumberInput from '../../components/NumberInput/NumberInput';
 
-function ProductPage({
-  productsData,
-  loading,
-  error,
-  cartItems,
-  setCartItems,
-}) {
+function ProductPage() {
   const navigate = useNavigate();
+  const { productsData, loading, error, cartItems, setCartItems } =
+    useContext(ShopContext);
+
   const { state } = useLocation();
   const { productId } = state || {};
   const [product, setProduct] = useState(null);

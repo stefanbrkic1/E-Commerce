@@ -1,16 +1,23 @@
 import './styles/global.css';
 import fetchProducts from './utils/productsApi';
-import { useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import HomePage from './pages/HomePage';
-import ProductsPage from './pages/ProductsPage/ProductsPage';
-import ProductPage from './pages/ProductPage/ProductPage';
+import { useState, useEffect, createContext } from 'react';
+import Router from './components/Router';
+
+export const ShopContext = createContext();
 
 function App() {
   const [productsData, setProductsData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [cartItems, setCartItems] = useState([]);
+
+  const contextValues = {
+    productsData,
+    loading,
+    error,
+    cartItems,
+    setCartItems,
+  };
 
   useEffect(() => {
     fetchProducts()
@@ -23,46 +30,9 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route
-          index
-          element={
-            <HomePage
-              productsData={productsData}
-              loading={loading}
-              error={error}
-              cartItems={cartItems}
-              setCartItems={setCartItems}
-            />
-          }
-        />
-        <Route
-          path="/products"
-          element={
-            <ProductsPage
-              productsData={productsData}
-              loading={loading}
-              error={error}
-              cartItems={cartItems}
-              setCartItems={setCartItems}
-            />
-          }
-        />
-        <Route
-          path="/product"
-          element={
-            <ProductPage
-              productsData={productsData}
-              loading={loading}
-              error={error}
-              cartItems={cartItems}
-              setCartItems={setCartItems}
-            />
-          }
-        />
-      </Routes>
-    </BrowserRouter>
+    <ShopContext.Provider value={contextValues}>
+      <Router />
+    </ShopContext.Provider>
   );
 }
 

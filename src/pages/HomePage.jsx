@@ -1,4 +1,5 @@
-import { useEffect } from 'react';
+import { useEffect, useContext } from 'react';
+import { ShopContext } from '../App';
 import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Navbar from '../components/Navbar/Navbar';
@@ -10,8 +11,10 @@ import InfiniteCaroussel from '../components/InfiniteCaroussel/InfiniteCaroussel
 import BottomSection from '../components/BottomSection/BottomSection';
 import Footer from '../components/Footer/Footer';
 
-function HomePage({ productsData, loading, error, cartItems, setCartItems }) {
+function HomePage() {
   const navigate = useNavigate();
+  const { productsData, loading, error, cartItems, setCartItems } =
+    useContext(ShopContext);
 
   const goToProductsPage = () => {
     navigate('/products');
