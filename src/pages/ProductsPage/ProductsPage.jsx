@@ -56,6 +56,10 @@ function ProductsPage() {
     navigate(`/product/${productId}`);
   }
 
+  function goToProductsPage() {
+    navigate('/products/all-products');
+  }
+
   useEffect(() => {
     // Scroll to the top when the component mounts
     window.scrollTo(0, 0);
@@ -63,7 +67,7 @@ function ProductsPage() {
 
   return (
     <>
-      <Navbar />
+      <Navbar goToProductsPage={goToProductsPage} />
       <section className="products-container">
         <div className="products-top">
           <h2 className="products-header">PRODUCTS</h2>
