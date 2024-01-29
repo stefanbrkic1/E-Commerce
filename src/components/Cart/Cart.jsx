@@ -1,6 +1,5 @@
 import { useContext, useState } from 'react';
 import './cart.css';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { ShopContext } from '../../App';
 
@@ -123,10 +122,5 @@ function Cart() {
     </>
   );
 }
-
-Cart.propTypes = {
-  cartItems: PropTypes.array.isRequired,
-  setCartItems: PropTypes.func,
-};
 
 export default Cart;
