@@ -4,8 +4,6 @@
 <div align="center">
 <img src="./src/assets/img/logo/e-commerce-logo.png" alt="logo" width="270">
 <br>
-E-Commerce Website
-<br>
 <br>
   <p>
     <a href="https://rickandmorty-memory-teal.vercel.app/">View Demo</a>
