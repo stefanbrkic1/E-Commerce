@@ -2,7 +2,7 @@
 <br>
 
 <div align="center">
-<img src="./src/assets/img/logo/readme-logo.jpg" alt="logo" width="320">
+<img src="./src/assets/img/logo/readme-logo.jpg" alt="logo" width="220">
 <br>
 E-Commerce Website
 <br>
