@@ -20,7 +20,12 @@
 
 ## Preview
 
+### Home Page
+
 ![Preview](./src/assets/img/screenshots/home-page.png)
+
+### Product Page
+
 ![Preview](./src/assets/img/screenshots/product-page.png)
 ![Preview](<./src/assets/img/GitHub(PHONES).jpg>)
 
