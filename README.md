@@ -6,7 +6,7 @@
 <br>
 <br>
   <p>
-    <a href="https://rickandmorty-memory-teal.vercel.app/">View Demo</a>
+    <a href="https://shoping-commerce.vercel.app/">View Demo</a>
     &nbsp;·&nbsp;
     <a href="https://github.com/stefanbrkic1/E-Commerce/issues">Report Bug</a>
     &nbsp;·&nbsp;
@@ -20,14 +20,8 @@
 
 ## Preview
 
-### Home Page
-
 ![Preview](./src/assets/img/screenshots/home-page.png)
-
-### Product Page
-
 ![Preview](./src/assets/img/screenshots/product-page.png)
-![Preview](<./src/assets/img/GitHub(PHONES).jpg>)
 
 > **Note**
 >
