@@ -20,7 +20,7 @@
 
 ## Preview
 
-![Preview](<./src/assets/img/GitHub(MainPage).jpg>)
+![Preview](./src/assets/img/screenshots/localhost_5173_.png)
 ![Preview](<./src/assets/img/GitHub(MainPage)2.jpg>)
 ![Preview](<./src/assets/img/GitHub(PHONES).jpg>)
 
