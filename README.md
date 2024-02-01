@@ -21,7 +21,7 @@
 ## Preview
 
 ![Preview](./src/assets/img/screenshots/home-page.png)
-![Preview](./src/assets/img/screenshots/product-page.png.jpg)
+![Preview](./src/assets/img/screenshots/product-page.png)
 ![Preview](<./src/assets/img/GitHub(PHONES).jpg>)
 
 > **Note**
