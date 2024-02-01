@@ -20,8 +20,8 @@
 
 ## Preview
 
-![Preview](./src/assets/img/screenshots/localhost_5173_.png)
-![Preview](<./src/assets/img/GitHub(MainPage)2.jpg>)
+![Preview](./src/assets/img/screenshots/home-page.png)
+![Preview](./src/assets/img/screenshots/product-page.png.jpg)
 ![Preview](<./src/assets/img/GitHub(PHONES).jpg>)
 
 > **Note**
