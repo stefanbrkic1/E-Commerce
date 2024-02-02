@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useState, useMemo } from 'react';
 import './cart.css';
 import styled from 'styled-components';
 import { ShopContext } from '../../App';
@@ -35,17 +35,19 @@ function Cart() {
     document.body.style.overflow = 'auto';
   }
 
-  function numberOfItemsInCart() {
-    return cartItems.reduce((sum, product) => {
-      return (sum += product.quantity);
-    }, 0);
-  }
+  const numberOfItemsInCart = useMemo(
+    () => cartItems.reduce((sum, product) => (sum += product.quantity), 0),
+    [cartItems],
+  );
 
-  function totalPrice() {
-    return cartItems.reduce((sum, product) => {
-      return (sum += product.quantity * product.price);
-    }, 0);
-  }
+  const totalPrice = useMemo(
+    () =>
+      cartItems.reduce(
+        (sum, product) => (sum += product.quantity * product.price),
+        0,
+      ),
+    [cartItems],
+  );
 
   function removeProduct(productId) {
     const updatedCartItems = cartItems.filter(
@@ -57,7 +59,7 @@ function Cart() {
   return (
     <>
       <button type="button" className="cart-btn" onClick={openCart}>
-        <span className="cart-items-length">{numberOfItemsInCart()}</span>
+        <span className="cart-items-length">{numberOfItemsInCart}</span>
       </button>
 
       <CartSidebar isCartActive={isCartActive}>
@@ -110,7 +112,7 @@ function Cart() {
           <div className="cart-checkout-container">
             <div className="checkout-total">
               <div>Total:</div>
-              <div>{totalPrice()}$</div>
+              <div>{totalPrice}$</div>
             </div>
             <button type="button" className="checkout-btn">
               CHECKOUT
