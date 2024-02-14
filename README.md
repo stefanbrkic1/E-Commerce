@@ -39,7 +39,7 @@ Embark on a shopping adventure like never before with our all-encompassing e-com
 
 <div align=center>
 
-![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) &nbsp;&nbsp;![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)&nbsp;&nbsp;![JavaScript](https://img.shields.io/badge/Javascript%20-%23F7DF1E.svg?style=for-the-badge&logo=javascript&logoColor=black) &nbsp;&nbsp;![Vite](https://img.shields.io/badge/vite-646CFF.svg?style=for-the-badge&logo=vite&logoColor=white) &nbsp;&nbsp;![JavaScript](https://img.shields.io/badge/ES6%20Modules%20-%23F7DF1E.svg?style=for-the-badge&logo=javascript&logoColor=black) &nbsp;&nbsp;![React](https://img.shields.io/badge/react-0D6D8C?style=for-the-badge&logo=react&logoColor=white)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) &nbsp;&nbsp;![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)&nbsp;&nbsp;![JavaScript](https://img.shields.io/badge/Javascript%20-%23F7DF1E.svg?style=for-the-badge&logo=javascript&logoColor=black) &nbsp;&nbsp;![Vite](https://img.shields.io/badge/vite-646CFF.svg?style=for-the-badge&logo=vite&logoColor=white) &nbsp;&nbsp;![Redux](https://img.shields.io/badge/764ABC?style=for-the-badge&logo=redux&logoColor=white) &nbsp;&nbsp;![React](https://img.shields.io/badge/react-0D6D8C?style=for-the-badge&logo=react&logoColor=white)
 
 <br>
 </div>
