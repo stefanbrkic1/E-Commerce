@@ -1,16 +1,20 @@
 import './product-page.css';
-import { ShopContext } from '../../App';
-import { useEffect, useState, useContext } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
 import RelatedItems from '../../components/RelatedItems/RelatedItems';
 import NumberInput from '../../components/NumberInput/NumberInput';
+import { useDispatch, useSelector } from 'react-redux';
+import { setCartItems } from '../../app/reducers/cartSlice';
 
 function ProductPage() {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { productsData, loading, error, cartItems, setCartItems } =
-    useContext(ShopContext);
+  const { productsData, loading, error } = useSelector(
+    (state) => state.products,
+  );
+  const { cartItems } = useSelector((state) => state.cart);
   const { productId } = useParams();
   const [product, setProduct] = useState(null);
   const [imageIndex, setImageIndex] = useState(0);
@@ -39,14 +43,14 @@ function ProductPage() {
     if (productIsInCart) {
       const modifiedQuantity = cartItems.map((productInCart) => {
         if (productInCart.id === product.id) {
-          return { ...product, quantity: (productInCart.quantity += quantity) };
+          return { ...product, quantity: productInCart.quantity + quantity };
         } else {
           return productInCart;
         }
       });
-      setCartItems(modifiedQuantity);
+      dispatch(setCartItems(modifiedQuantity));
     } else {
-      setCartItems([...cartItems, { ...product, quantity }]);
+      dispatch(setCartItems([...cartItems, { ...product, quantity }]));
     }
   }
 

@@ -1,15 +1,17 @@
-import { useEffect, useRef, useState, useContext } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import '../PopularItems/popular-items.css';
 import './related-items.css';
 import ProductCard from '../ProductCard/ProductCard';
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
-import { ShopContext } from '../../App';
+import { useSelector } from 'react-redux';
 
 function RelatedItems({ category, goToProductsPage }) {
   const navigate = useNavigate();
   const containerRef = useRef(null);
-  const { productsData, loading, error } = useContext(ShopContext);
+  const { productsData, loading, error } = useSelector(
+    (state) => state.products,
+  );
   const [relatedItems, setRelatedItems] = useState(null);
 
   useEffect(() => {

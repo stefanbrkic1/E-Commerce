@@ -1,7 +1,8 @@
-import { useContext, useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import './cart.css';
 import styled from 'styled-components';
-import { ShopContext } from '../../App';
+import { useDispatch, useSelector } from 'react-redux';
+import { setCartItems } from '../../app/reducers/cartSlice';
 
 const CartSidebar = styled.div`
   position: absolute;
@@ -22,7 +23,8 @@ const CartSidebar = styled.div`
 `;
 
 function Cart() {
-  const { cartItems, setCartItems } = useContext(ShopContext);
+  const dispatch = useDispatch();
+  const { cartItems } = useSelector((state) => state.cart);
   const [isCartActive, setIsCartActive] = useState(false);
 
   function openCart() {
@@ -53,7 +55,7 @@ function Cart() {
     const updatedCartItems = cartItems.filter(
       (product) => product.id !== productId,
     );
-    setCartItems(updatedCartItems);
+    dispatch(setCartItems(updatedCartItems));
   }
 
   return (

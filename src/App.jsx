@@ -1,38 +1,27 @@
 import './styles/global.css';
 import fetchProducts from './utils/productsApi';
-import { useState, useEffect, createContext } from 'react';
+import { useEffect } from 'react';
 import Router from './components/Router';
-
-export const ShopContext = createContext();
+import {
+  setProducts,
+  setError,
+  setLoading,
+} from './app/reducers/productsSlice';
+import { useDispatch } from 'react-redux';
 
 function App() {
-  const [productsData, setProductsData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const [cartItems, setCartItems] = useState([]);
-
-  const contextValues = {
-    productsData,
-    loading,
-    error,
-    cartItems,
-    setCartItems,
-  };
+  const dispatch = useDispatch();
 
   useEffect(() => {
     fetchProducts()
       .then((data) => {
-        setProductsData(data);
+        dispatch(setProducts(data));
       })
-      .catch((error) => setError(error))
-      .finally(() => setLoading(false));
-  }, []);
+      .catch((error) => dispatch(setError(error)))
+      .finally(() => dispatch(setLoading(false)));
+  }, [dispatch]);
 
-  return (
-    <ShopContext.Provider value={contextValues}>
-      <Router />
-    </ShopContext.Provider>
-  );
+  return <Router />;
 }
 
 export default App;

@@ -1,14 +1,16 @@
 import './products-page.css';
-import { ShopContext } from '../../App';
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
 import Product from '../../components/Product/Product';
-import { useEffect, useState, useContext } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 function ProductsPage() {
   const navigate = useNavigate();
-  const { productsData, loading, error } = useContext(ShopContext);
+  const { productsData, loading, error } = useSelector(
+    (state) => state.products,
+  );
   const { category } = useParams();
   const [productsCategory, setProductsCategory] = useState(
     category || 'all-products',

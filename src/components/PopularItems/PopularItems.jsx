@@ -1,14 +1,16 @@
-import { useContext, useRef } from 'react';
+import { useRef } from 'react';
 import './popular-items.css';
 import ProductCard from '../ProductCard/ProductCard';
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
-import { ShopContext } from '../../App';
+import { useSelector } from 'react-redux';
 
 function PopularItems({ goToProductsPage }) {
   const navigate = useNavigate();
   const containerRef = useRef(null);
-  const { productsData, loading, error } = useContext(ShopContext);
+  const { productsData, loading, error } = useSelector(
+    (state) => state.products,
+  );
 
   const scrollLeft = () => {
     if (containerRef.current) {
