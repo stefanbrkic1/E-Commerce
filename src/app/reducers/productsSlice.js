@@ -1,4 +1,24 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+
+export const fetchProducts = createAsyncThunk(
+  'products/fetchProducts',
+  async () => {
+    try {
+      const response = await fetch('https://api.escuelajs.co/api/v1/products', {
+        mode: 'cors',
+      });
+
+      if (!response.ok) {
+        throw new Error('ServiceError');
+      }
+
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error(error);
+    }
+  },
+);
 
 export const productsSlice = createSlice({
   name: 'products',
@@ -7,19 +27,20 @@ export const productsSlice = createSlice({
     productsData: null,
     error: null,
   },
-  reducers: {
-    setProducts: (state, action) => {
+  reducers: {},
+  extraReducers: (builder) => {
+    builder.addCase(fetchProducts.pending, (state) => {
+      state.loading = true;
+    });
+    builder.addCase(fetchProducts.fulfilled, (state, action) => {
+      state.loading = false;
       state.productsData = action.payload;
-    },
-    setError: (state, action) => {
+    });
+    builder.addCase(fetchProducts.rejected, (state, action) => {
+      state.loading = false;
       state.error = action.error;
-    },
-    setLoading: (state, action) => {
-      state.loading = action.payload;
-    },
+    });
   },
 });
-
-export const { setProducts, setError, setLoading } = productsSlice.actions;
 
 export default productsSlice.reducer;
