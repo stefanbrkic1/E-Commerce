@@ -4,12 +4,9 @@ export const fetchProducts = createAsyncThunk(
   'products/fetchProducts',
   async () => {
     try {
-      const response = await fetch(
-        'https://api.escuelajs.co/api/v1/productsdds',
-        {
-          mode: 'cors',
-        },
-      );
+      const response = await fetch('https://api.escuelajs.co/api/v1/products', {
+        mode: 'cors',
+      });
 
       if (!response.ok) {
         throw new Error('ServiceError');
