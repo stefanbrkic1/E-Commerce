@@ -135,7 +135,7 @@
 .cart-product-img {
   width: 60px;
   height: 60px;
-  background-color: red;
+  background-color: var(--background-secondary-color);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

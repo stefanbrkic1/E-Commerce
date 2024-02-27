@@ -1,0 +1,31 @@
+.search-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 7px;
+  border-bottom: 1px solid var(--background-color);
+  cursor: pointer;
+}
+
+.search-item:hover {
+  background-color: var(--primary-color);
+}
+
+.search-item-left {
+  flex: 1;
+}
+
+.search-item-left h4 {
+  display: flex;
+  justify-content: start;
+  margin-bottom: 4px;
+}
+
+.search-item-img {
+  width: 50px;
+  height: 50px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: var(--background-secondary-color);
+}
