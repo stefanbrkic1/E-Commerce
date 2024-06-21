@@ -23,42 +23,49 @@ function Navbar({ goToProductsPage }) {
   }, [searchText, productsData]);
 
   return (
-    <nav className="navbar">
-      <div className="navbar-left">
-        <div className="search-bar-container">
-          <input
-            type="text"
-            className="search-bar"
-            placeholder="Search..."
-            value={searchText}
-            onChange={(e) => setSearchText(e.target.value)}
-          />
-          <div className="search-results-container">
-            {searchText !== '' &&
-              searchedProducts.length > 0 &&
-              searchedProducts.map((product) => (
-                <SearchItem key={product.id} product={product} />
-              ))}
+    <>
+      <nav className="navbar-container">
+        <div className="top-bar">
+          GET OUR BEST DEALS ON THIS LUNAR YEAR <span>30% FLAT OFF</span>
+        </div>
+        <div className="navbar">
+          <div className="navbar-left">
+            <div className="search-bar-container">
+              <input
+                type="text"
+                className="search-bar"
+                placeholder="Search..."
+                value={searchText}
+                onChange={(e) => setSearchText(e.target.value)}
+              />
+              <div className="search-results-container">
+                {searchText !== '' &&
+                  searchedProducts.length > 0 &&
+                  searchedProducts.map((product) => (
+                    <SearchItem key={product.id} product={product} />
+                  ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="navbar-middle">
+            <Link to="/" className="logo"></Link>
+          </div>
+
+          <div className="navbar-right">
+            <div className="products-link" onClick={goToProductsPage}>
+              SHOP NOW
+            </div>
+
+            <button type="button" className="user-btn">
+              <div className="user-icon"></div>
+            </button>
+
+            <Cart />
           </div>
         </div>
-      </div>
-
-      <div className="navbar-middle">
-        <Link to="/" className="logo"></Link>
-      </div>
-
-      <div className="navbar-right">
-        <div className="products-link" onClick={goToProductsPage}>
-          SHOP NOW
-        </div>
-
-        <button type="button" className="user-btn">
-          <div className="user-icon"></div>
-        </button>
-
-        <Cart />
-      </div>
-    </nav>
+      </nav>
+    </>
   );
 }
 
